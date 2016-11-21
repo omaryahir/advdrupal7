@@ -4,13 +4,13 @@ Testing some things in Drupal 7
 ===============================
 
 
-###Modules 
+### Modules 
 It is good to hand folder modules in this way:
 sites/all/modules/contrib
                ../custom
 
 
-**Install Module Devel**
+#### Create a module
 When you install devel module, folder devel will appear
 in the structure of directories.
 
