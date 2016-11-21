@@ -38,7 +38,16 @@ function my_menu_example_menu()
   );
 
   // Fourth Example
-  $items['node/%node/%get_title/%'] = array(
+  //$items['node/%node/%get_title/%'] = array(
+    //'title' => 'custom title',
+    //'page callback' => '_custom_title',
+    //'page arguments' => array(2,3),
+    //'access callback' => TRUE,
+    //'weight' => -6,
+  //);
+
+  // Fifth Example
+  $items['node/%node/%get_owner/%'] = array(
     'title' => 'custom title',
     'page callback' => '_custom_title',
     'page arguments' => array(2,3),
@@ -69,5 +78,9 @@ function get_title_load($title)
   return $title;
 }
 
+function get_owner_load($nid)
+{
+  return 10; 
+}
 
 
