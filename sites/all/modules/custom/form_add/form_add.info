@@ -1,0 +1,4 @@
+name = Form Add
+description = example module form_alter
+version = VERSION
+core = 7.x

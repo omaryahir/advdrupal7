@@ -1,0 +1,29 @@
+<?php 
+/**
+ * implemented hook_form_alter()
+ * @param type $form
+ * @param type $form_state
+ * @param type $form_id
+ * 
+ */
+
+function form_add_form_alter(&$form, &$form_state, $form_id)
+{
+
+    if($form_id=="page_node_form")
+    {
+        dsm("hola");
+        dsm($form_id);
+    }
+
+    $form['title']['#title'] = t('another');
+    dsm($form);
+
+    $form['address_field'] = array(
+        '#type' => 'textfield',
+        '#title' => t('address'),
+        '#default_value' => t('your address please'),
+        '#require' => true
+    );
+
+}

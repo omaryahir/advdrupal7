@@ -8,10 +8,8 @@ Testing some things in Drupal 7
 It is good to hand folder modules in this way:
 sites/all/modules/contrib
                ../custom
-               ../devel
-               ../example
 
 
-
-
+When you install devel module, folder devel will appear
+in the structure of directories.
 
