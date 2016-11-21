@@ -1,0 +1,4 @@
+name = Custom Menu Add
+description = example custom menu add
+version = VERSION
+core = 7.x

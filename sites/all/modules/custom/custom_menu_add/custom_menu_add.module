@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implements hook_menu()
+ * 
+ * Provides a default page to explain what this module does.
+ */
+
+function custom_menu_add_menu()
+{
+    $items['custom-menu-add/message'] = array(
+        'page callback' => 'greeting_text',
+        'access callback' => TRUE,
+        'title' => 'Welcome to drupal world',
+    );
+    return $items;
+}
+
+function greeting_text()
+{
+    return "Welcome to drupal, this is awsome!";
+}
+
+
+

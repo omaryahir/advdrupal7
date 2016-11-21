@@ -14,16 +14,16 @@ function form_add_form_alter(&$form, &$form_state, $form_id)
     {
         dsm("hola");
         dsm($form_id);
+
+        $form['title']['#title'] = t('another');
+        dsm($form);
+
+        $form['address_field'] = array(
+            '#type' => 'textfield',
+            '#title' => t('address'),
+            '#default_value' => t('your address please'),
+            '#require' => true
+        );
     }
-
-    $form['title']['#title'] = t('another');
-    dsm($form);
-
-    $form['address_field'] = array(
-        '#type' => 'textfield',
-        '#title' => t('address'),
-        '#default_value' => t('your address please'),
-        '#require' => true
-    );
 
 }
