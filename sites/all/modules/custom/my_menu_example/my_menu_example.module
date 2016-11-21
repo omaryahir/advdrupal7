@@ -25,6 +25,27 @@ function my_menu_example_menu()
     'weight' => 0,
   );
 
+
+  // Third Example
+  $items['node/%node/info'] = array(
+    'title' => 'node information',
+    'page callback' => '_node_information',
+    'page arguments' => array(1, 2),
+    'access callback' => TRUE,
+    'type' => MENU_LOCAL_TASK,
+    'expanded' => TRUE, // this is to make a tab
+    'weight' => 0,
+  );
+
+  // Fourth Example
+  $items['node/%node/%get_title/%'] = array(
+    'title' => 'custom title',
+    'page callback' => '_custom_title',
+    'page arguments' => array(2,3),
+    'access callback' => TRUE,
+    'weight' => -6,
+  );
+
   return $items;
 }
 
@@ -32,3 +53,21 @@ function _page_with_a_message($message)
 {
   return $message;
 }
+
+function _node_information($node, $title)
+{
+  return $node->title="another thing that you need !";
+}
+
+function _custom_title($title, $message)
+{
+  return $title.' - '.$message;
+}
+
+function get_title_load($title)
+{
+  return $title;
+}
+
+
+
