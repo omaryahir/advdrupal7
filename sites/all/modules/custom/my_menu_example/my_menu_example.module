@@ -1,0 +1,34 @@
+<?php
+/**
+ * Implemented hook_menu()
+ */
+
+function my_menu_example_menu()
+{
+  $items = array();
+
+  // First Example type = MENU_NORMAL_ITEM (default)
+  $items['example/hello-oy'] = array(
+    'title' => 'First example, a simple example page with a message',
+    'page callback' => '_page_with_a_message',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+    'weight' => 0,
+  );
+
+  // Second Example
+  $items['example/%'] = array(
+    'title' => 'Second example, a simple example page with a personal message',
+    'page callback' => '_page_with_a_message',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+    'weight' => 0,
+  );
+
+  return $items;
+}
+
+function _page_with_a_message($message)
+{
+  return $message;
+}
