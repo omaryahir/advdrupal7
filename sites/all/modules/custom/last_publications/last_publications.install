@@ -1,0 +1,11 @@
+<?php
+
+/** 
+ * Implements hook_uninstall().
+ * this variables are in the table libvariables
+ */
+
+function last_publications_uninstall()
+{
+  variable_del('last_publications_content_type');
+}

@@ -1,0 +1,4 @@
+name = Last Publication Block
+description = An example how a module can define blocks with the last publications.
+core = 7.x
+dependencies[] = block

@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * Implements hook_menu()
+ *
+ * This page will explain how it works
+ */
+
+function last_publications_menu()
+{
+  $items['last_publication/info'] = array(
+    'page callback' => 'last_publications_page',
+    'access callback' => TRUE,
+    'title' => 'Last Publications Block',
+  );
+  return $items;
+}
+
+
+/*
+ * Simple page function to explain what the block example is about.
+ */
+function last_publications_page()
+{
+  $page = array(
+    '#type' => 'markup',
+    '#markup' => t('Show last publications from a content type, you can configure an enable your block'),
+  );
+  return $page;
+}
+
+/**
+ * Implements hook_block_info().
+ *
+ * This hook declares what blocks are provided by the module.
+ */
+function last_publications_block_info() 
+{
+
+  $blocks['last_publications_content_type'] = array(
+    'info' => t('Last publications block'),
+    'status' => TRUE, 
+    'region' => 'sidebar_first',
+  );
+
+  return $blocks;
+}
+
+function last_publications_block_configure($delta='')
+{
+  foreach(node_type_get_types() as $node)
+  {
+    $note_types[]=$node->type;
+  }
+  $form = array();
+  if($delta == 'last_publications_content_type')
+  {
+    $form['last_publications_content_type'] = array(
+      '#type' => 'select',
+      '#options' => drupal_map_assoc(($note_types)),
+      '#title' => t('Block with the last publications'),
+      '#default_value' => variable_get('last_publications_content_type', 'article'),
+    );
+  }
+  return $form;
+}
+
+function last_publications_block_save($delta = '', $edit = array())
+{
+  if($delta=='last_publications_content_type')
+  {
+    variable_set('last_publications_content_type', $edit['last_publications_content_type']);
+  }
+  return ;
+}
+
