@@ -29,3 +29,9 @@ so hook=custom_menu_add and it has to ended with *_menu*.
 NOTE: Remember about the cache, even you haven't enabled the
 cache system, maybe, is possible that you may need to clear
 the cache before you would be able to see the changes.
+
+#### Some Interesting links:
+
+[1]: <http://www.drupal.org/docs/7/api>                                 "API documentation: Drupal 7"
+[2]: <http://www.davidam.com/docu/drupal/drupal7.html>                  "Programming manual of Drupal 7"
+[3]: <http://tutorial-drupal.com/modificacion-de-temas-en-drupal-7>     "Theme modification"
